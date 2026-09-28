@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Library Management - The modern, premium digital library and study management ecosystem for students, researchers, and academic institutions.">
+  <title>Library Management | Modern Study & Knowledge Hub</title>
+
+  <!-- Google Fonts: Outfit (Headings) & Inter (Body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome 6 Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Custom White & Blue Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ==========================================================================
+       HEADER & NAVIGATION
+       ========================================================================== -->
+  <header class="site-header">
+    <div class="site-container">
+      <nav class="nav-wrapper">
+        <!-- Brand Logo -->
+        <a href="#hero" class="brand-logo" title="Library Management System">
+          <div class="brand-icon-box">
+            <i class="fa-solid fa-book-open"></i>
+          </div>
+          <span>Library Management</span>
+          <span class="brand-badge">Academic 2026</span>
+        </a>
+
+        <!-- Navigation Links -->
+        <ul class="nav-links" id="nav-links">
+          <li><a href="#catalog-section" class="nav-link">Study Catalog</a></li>
+          <li><a href="#study-space-section" class="nav-link">Study Space & Desks</a></li>
+          <li><a href="#focus-suite-section" class="nav-link">Focus Suite</a></li>
+          <li><a href="#dashboard-section" class="nav-link">My Dashboard</a></li>
+          <li><a href="#resources-section" class="nav-link">E-Guides</a></li>
+          <li><a href="#faq-section" class="nav-link">Policies & FAQ</a></li>
+        </ul>
+
+        <!-- Action Items -->
+        <div class="nav-actions">
+          <button class="btn-icon" id="btn-open-card-modal" title="View Digital Library Pass">
+            <i class="fa-solid fa-id-card"></i>
+          </button>
+
+          <a href="#dashboard-section" class="btn-icon" title="Active Borrowed Books">
+            <i class="fa-solid fa-book-bookmark"></i>
+            <span class="badge-counter" id="nav-borrowed-count">0</span>
+          </a>
+
+          <button class="btn-primary" id="btn-open-add-book">
+            <i class="fa-solid fa-plus"></i>
+            <span>Add Study Book</span>
+          </button>
+
+          <!-- Mobile Toggle -->
+          <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle Navigation">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       HERO SECTION
+       ========================================================================== -->
+  <section class="hero-section" id="hero">
+    <div class="site-container">
+      <div class="hero-grid">
+        <!-- Hero Text & Quick Action -->
+        <div class="hero-content">
+          <div class="hero-pill">
+            <span class="hero-pill-dot"></span>
+            <span>Over 45,000+ Curated Academic Volumes & Live Seats</span>
+          </div>
+
+          <h1 class="hero-title">
+            The Intelligent <span>Library Management</span> & Study Platform
+          </h1>
+
+          <p class="hero-subtitle">
+            Seamlessly search university course literature, issue physical and digital textbooks, reserve quiet study pods, and accelerate your academic productivity with integrated focus tools.
+          </p>
+
+          <!-- Quick Search Engine Bar -->
+          <div class="hero-search-box">
+            <i class="fa-solid fa-magnifying-glass" style="color: #3b82f6; margin-right: 0.75rem;"></i>
+            <input type="text" id="hero-search-input" placeholder="Search by title, author, subject, or ISBN..." autocomplete="off">
+            <button class="btn-primary" id="hero-search-btn">
+              <span>Find Resources</span>
+            </button>
+          </div>
+
+          <!-- Quick Feature Navigation Buttons -->
+          <div class="hero-actions" style="margin-top: 1.5rem;">
+            <a href="#catalog-section" class="btn-secondary">
+              <i class="fa-solid fa-compass"></i> Explore Catalog
+            </a>
+            <a href="#study-space-section" class="btn-secondary">
+              <i class="fa-solid fa-chair"></i> Reserve Study Desk
+            </a>
+            <a href="#focus-suite-section" class="btn-secondary">
+              <i class="fa-solid fa-stopwatch"></i> Start Pomodoro Timer
+            </a>
+          </div>
+        </div>
+
+        <!-- Hero Visual Showcase -->
+        <div class="hero-visual-container">
+          <div class="hero-card-featured">
+            <div class="featured-header">
+              <span class="featured-label">Featured University Reading</span>
+              <div class="live-indicator">
+                <i class="fa-solid fa-circle-dot"></i> Live Availability
+              </div>
+            </div>
+
+            <!-- Mini Featured Item -->
+            <div class="hero-mini-book">
+              <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=300&q=80" alt="Artificial Intelligence">
+              <div class="hero-mini-details">
+                <h4>Artificial Intelligence: A Modern Approach</h4>
+                <p>by Stuart Russell & Peter Norvig</p>
+                <div class="hero-mini-meta">
+                  <span><i class="fa-solid fa-star" style="color: #f59e0b;"></i> 4.9 (342 reviews)</span>
+                  <span>•</span>
+                  <span>5 Copies on Shelf</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Highlights Row -->
+            <div class="hero-stats-row">
+              <div class="hero-stat-item">
+                <div class="hero-stat-value">14 Days</div>
+                <div class="hero-stat-label">Loan Duration</div>
+              </div>
+              <div class="hero-stat-item">
+                <div class="hero-stat-value">Instant</div>
+                <div class="hero-stat-label">Digital Access</div>
+              </div>
+              <div class="hero-stat-item">
+                <div class="hero-stat-value">Zero Fine</div>
+                <div class="hero-stat-label">1-Click Renew</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Floating Accent Badges -->
+          <div class="floating-accent-badge floating-badge-1">
+            <div style="width: 38px; height: 38px; border-radius: 50%; background: #eff6ff; display: flex; align-items: center; justify-content: center; color: #2563eb;">
+              <i class="fa-solid fa-graduation-cap"></i>
+            </div>
+            <div>
+              <div style="font-weight: 700; font-size: 0.88rem; color: #1e3a8a;">Study Verified</div>
+              <div style="font-size: 0.75rem; color: #64748b;">Accredited Syllabi 2026</div>
+            </div>
+          </div>
+
+          <div class="floating-accent-badge floating-badge-2">
+            <div style="width: 38px; height: 38px; border-radius: 50%; background: #ecfdf5; display: flex; align-items: center; justify-content: center; color: #10b981;">
+              <i class="fa-solid fa-wifi"></i>
+            </div>
+            <div>
+              <div style="font-weight: 700; font-size: 0.88rem; color: #065f46;">Smart Quiet Pods</div>
+              <div style="font-size: 0.75rem; color: #64748b;">Real-time Seat Booking</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       STATS STRIP
+       ========================================================================== -->
+  <section class="stats-strip">
+    <div class="site-container">
+      <div class="stats-grid">
+        <div class="stat-box">
+          <div class="stat-icon"><i class="fa-solid fa-book-bookmark"></i></div>
+          <div>
+            <div class="stat-number">45,800+</div>
+            <div class="stat-desc">Cataloged Textbooks & Papers</div>
+          </div>
+        </div>
+
+        <div class="stat-box">
+          <div class="stat-icon"><i class="fa-solid fa-users"></i></div>
+          <div>
+            <div class="stat-number">12,450+</div>
+            <div class="stat-desc">Enrolled Student Readers</div>
+          </div>
+        </div>
+
+        <div class="stat-box">
+          <div class="stat-icon"><i class="fa-solid fa-laptop-code"></i></div>
+          <div>
+            <div class="stat-number">100% Free</div>
+            <div class="stat-desc">E-Book & Digital Previews</div>
+          </div>
+        </div>
+
+        <div class="stat-box">
+          <div class="stat-icon"><i class="fa-solid fa-clock-rotate-left"></i></div>
+          <div>
+            <div class="stat-number">24 / 7</div>
+            <div class="stat-desc">Online Portal Access</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       CATALOG & STUDY MATERIALS ENGINE
+       ========================================================================== */
+       ========================================================================== -->
+  <section class="section" id="catalog-section">
+    <div class="site-container">
+      <div class="section-header">
+        <span class="section-tag">Academic Repository</span>
+        <h2 class="section-title">Explore Academic Course Volumes</h2>
+        <p class="section-subtitle">
+          Browse verified curriculum texts, engineering references, medical handbooks, and research foundations.
+        </p>
+      </div>
+
+      <!-- Catalog Control Toolbar -->
+      <div class="catalog-toolbar">
+        <div class="toolbar-top-row">
+          <div class="filter-search-input">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" id="catalog-search-input" placeholder="Search catalog by title, author, or tags...">
+          </div>
+
+          <div class="toolbar-actions">
+            <!-- Availability filter -->
+            <select class="select-filter" id="filter-availability">
+              <option value="all">All Loan Statuses</option>
+              <option value="available">Available on Shelf Now</option>
+              <option value="digital">Digital E-Book Access</option>
+            </select>
+
+            <!-- Sorting filter -->
+            <select class="select-filter" id="filter-sort">
+              <option value="rating">Highest Rated</option>
+              <option value="newest">Latest Edition</option>
+              <option value="copies">Most Copies Available</option>
+              <option value="title">Alphabetical (A - Z)</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Category Filter Pills -->
+        <div class="category-pills" id="category-pills-container">
+          <!-- Populated by JS -->
+        </div>
+
+        <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85rem; color: #64748b; padding-top: 0.25rem;">
+          <span id="catalog-result-count">Showing 12 of 12 study volumes</span>
+          <span><i class="fa-solid fa-circle-info" style="color: #3b82f6;"></i> Up to 5 books can be borrowed concurrently</span>
+        </div>
+      </div>
+
+      <!-- Books Grid -->
+      <div class="books-grid" id="books-grid">
+        <!-- Rendered by js/app.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       STUDY SPACE & SEAT RESERVATION SYSTEM
+       ========================================================================== -->
+  <section class="section section-light-blue" id="study-space-section">
+    <div class="site-container">
+      <div class="section-header">
+        <span class="section-tag">Library Management Floor Plan</span>
+        <h2 class="section-title">Interactive Study Desk & Pod Reservation</h2>
+        <p class="section-subtitle">
+          Guarantee a quiet environment for your exams and group discussions. Select an available desk on our live floor plan.
+        </p>
+      </div>
+
+      <div class="study-space-grid">
+        <!-- Left: Interactive Floor Map -->
+        <div class="desk-layout-card">
+          <!-- Zone Filter Tabs -->
+          <div class="zone-selector">
+            <button class="zone-tab active" data-zone="all" onclick="filterDesksByZone('all', this)">
+              <i class="fa-solid fa-layer-group"></i> All Zones
+            </button>
+            <button class="zone-tab" data-zone="Silent Pod" onclick="filterDesksByZone('Silent Pod', this)">
+              <i class="fa-solid fa-headphones-simple"></i> Silent Pods (Zone A)
+            </button>
+            <button class="zone-tab" data-zone="Collaborative Desk" onclick="filterDesksByZone('Collaborative Desk', this)">
+              <i class="fa-solid fa-users-rectangle"></i> Group Desks (Zone B)
+            </button>
+            <button class="zone-tab" data-zone="Research Lab" onclick="filterDesksByZone('Research Lab', this)">
+              <i class="fa-solid fa-desktop"></i> High-End PC Labs (Zone C)
+            </button>
+          </div>
+
+          <!-- Seat Legend -->
+          <div class="seat-legend">
+            <div class="legend-item">
+              <span class="legend-chip avail"></span>
+              <span>Available to Reserve</span>
+            </div>
+            <div class="legend-item">
+              <span class="legend-chip selected"></span>
+              <span>Selected by You</span>
+            </div>
+            <div class="legend-item">
+              <span class="legend-chip booked"></span>
+              <span>Currently Occupied</span>
+            </div>
+          </div>
+
+          <!-- Floor Desks Visual Grid -->
+          <div class="floor-desks-grid" id="desks-grid">
+            <!-- Desks rendered by JS -->
+          </div>
+        </div>
+
+        <!-- Right: Reservation Confirmation Form -->
+        <div class="booking-sidebar-card">
+          <h3><i class="fa-solid fa-calendar-check" style="color: #2563eb;"></i> Reserve Workspace</h3>
+
+          <!-- Selected Seat Summary -->
+          <div class="selected-seat-summary" id="selected-seat-summary" style="display: none;">
+            <div style="font-size: 0.75rem; text-transform: uppercase; color: #2563eb; font-weight: 700;">Selected Study Node</div>
+            <div style="font-size: 1.4rem; font-weight: 800; color: #1e3a8a; margin: 0.2rem 0;" id="summary-seat-id">-</div>
+            <div style="font-size: 0.85rem; color: #0f172a; font-weight: 600;" id="summary-seat-zone">-</div>
+            <div style="font-size: 0.75rem; color: #64748b; margin-top: 0.25rem;" id="summary-seat-features">-</div>
+          </div>
+
+          <form onsubmit="confirmSeatBooking(event)">
+            <div class="form-group">
+              <label class="form-label" for="seat-student-name">Student Full Name</label>
+              <input type="text" class="form-control" id="seat-student-name" value="Alex Sterling" required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="seat-student-id">Student Pass / ID Number</label>
+              <input type="text" class="form-control" id="seat-student-id" value="LM-88942-CS" required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="seat-time-slot">Preferred Study Window</label>
+              <select class="form-control" id="seat-time-slot">
+                <option value="09:00 - 11:00">Morning (09:00 - 11:00 AM)</option>
+                <option value="11:30 - 13:30">Midday (11:30 AM - 01:30 PM)</option>
+                <option value="14:00 - 16:00" selected>Afternoon (02:00 - 04:00 PM)</option>
+                <option value="16:30 - 18:30">Late Afternoon (04:30 - 06:30 PM)</option>
+                <option value="19:00 - 22:00">Night Owl Study (07:00 - 10:00 PM)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="seat-duration">Session Duration</label>
+              <select class="form-control" id="seat-duration">
+                <option value="1 Hour">1 Hour (Quick Review)</option>
+                <option value="2 Hours" selected>2 Hours (Standard Block)</option>
+                <option value="4 Hours">4 Hours (Deep Exam Prep)</option>
+                <option value="Full Day">Full Day (Research Fellow)</option>
+              </select>
+            </div>
+
+            <button type="submit" class="btn-primary" id="btn-confirm-seat-booking" style="width: 100%; justify-content: center;" disabled>
+              <i class="fa-solid fa-ticket"></i> Confirm & Generate Pass
+            </button>
+            <p style="font-size: 0.72rem; color: #64748b; text-align: center; margin-top: 0.75rem;">
+              *Pass allows smart turnstile entry and Wi-Fi token generation.
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       STUDENT FOCUS SUITE (Pomodoro & Quick Notes)
+       ========================================================================== -->
+  <section class="section" id="focus-suite-section">
+    <div class="site-container">
+      <div class="section-header">
+        <span class="section-tag">Study Productivity</span>
+        <h2 class="section-title">Deep Focus Suite & Study Companion</h2>
+        <p class="section-subtitle">
+          Boost memory retention and time management with our built-in Pomodoro intervals and auto-saving scratchpad.
+        </p>
+      </div>
+
+      <div class="focus-suite-grid">
+        <!-- Pomodoro Study Focus Timer -->
+        <div class="pomodoro-card">
+          <!-- Modes -->
+          <div class="pomodoro-modes">
+            <button class="pomo-mode-btn active" data-mode="pomodoro" onclick="setPomodoroMode('pomodoro')">
+              25m Focus
+            </button>
+            <button class="pomo-mode-btn" data-mode="shortBreak" onclick="setPomodoroMode('shortBreak')">
+              5m Short Break
+            </button>
+            <button class="pomo-mode-btn" data-mode="longBreak" onclick="setPomodoroMode('longBreak')">
+              15m Long Break
+            </button>
+          </div>
+
+          <!-- Timer Dial SVG -->
+          <div class="timer-dial-wrapper">
+            <svg class="timer-svg" viewBox="0 0 240 240">
+              <circle class="timer-circle-bg" cx="120" cy="120" r="105"></circle>
+              <circle class="timer-circle-progress" id="pomo-circle-progress" cx="120" cy="120" r="105"></circle>
+            </svg>
+            <div class="timer-display">
+              <div class="timer-digits" id="pomo-digits">25:00</div>
+              <div class="timer-status-text" id="pomo-status-text">Deep Focus Session</div>
+            </div>
+          </div>
+
+          <!-- Controls -->
+          <div class="timer-controls">
+            <button class="btn-primary" id="btn-pomo-start">
+              <i class="fa-solid fa-play"></i> Start Session
+            </button>
+            <button class="btn-primary" id="btn-pomo-pause" style="display: none; background: #eab308;">
+              <i class="fa-solid fa-pause"></i> Pause
+            </button>
+            <button class="btn-secondary" id="btn-pomo-reset">
+              <i class="fa-solid fa-rotate-left"></i> Reset
+            </button>
+          </div>
+          <p style="font-size: 0.78rem; color: #64748b; margin-top: 1.25rem;">
+            *Synthesized audio chime notifies you automatically upon session completion.
+          </p>
+        </div>
+
+        <!-- Quick Study Notes & Scratchpad -->
+        <div class="notes-card">
+          <div class="notes-header">
+            <h3><i class="fa-solid fa-pen-to-square" style="color: #2563eb;"></i> Study Scratchpad</h3>
+            <div style="display: flex; gap: 0.5rem;">
+              <button class="btn-secondary" id="btn-export-notes" style="padding: 0.4rem 0.75rem; font-size: 0.8rem;" title="Download as .TXT">
+                <i class="fa-solid fa-file-arrow-down"></i> Export
+              </button>
+              <button class="btn-secondary" id="btn-clear-notes" style="padding: 0.4rem 0.75rem; font-size: 0.8rem; color: #ef4444;" title="Clear Note">
+                <i class="fa-solid fa-trash-can"></i>
+              </button>
+            </div>
+          </div>
+
+          <textarea class="notes-textarea" id="study-notes-area" placeholder="Jot down formulas, theorem numbers, bibliography references, or study questions here... Everything is auto-saved in your browser!"></textarea>
+
+          <div class="notes-footer">
+            <div class="notes-autosave-status" id="notes-autosave-status">
+              <i class="fa-solid fa-check" style="color: #10b981;"></i> Auto-saved to browser
+            </div>
+            <span style="font-size: 0.75rem; color: #94a3b8;">Private local workspace</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       USER DASHBOARD & BORROWED BOOKS MANAGER
+       ========================================================================== -->
+  <section class="section section-light-blue" id="dashboard-section">
+    <div class="site-container">
+      <div class="section-header">
+        <span class="section-tag">Student Central</span>
+        <h2 class="section-title">My Study Dashboard & Loans</h2>
+        <p class="section-subtitle">
+          Track your active book checkouts, extend due dates, and view your digital Library Management member credential.
+        </p>
+      </div>
+
+      <div class="dashboard-grid">
+        <!-- Left: Virtual Digital Library Card -->
+        <div>
+          <div class="virtual-card-container">
+            <div class="virtual-card-pattern"></div>
+            <div class="card-top">
+              <span class="card-institute">Library Management • Pass</span>
+              <div class="card-chip"></div>
+            </div>
+
+            <div class="card-user-info">
+              <div class="card-user-name">Alex Sterling</div>
+              <div class="card-user-role">B.S. Computer Science & AI</div>
+            </div>
+
+            <div class="card-bottom">
+              <div>
+                <div style="font-size: 0.65rem; text-transform: uppercase; opacity: 0.8;">Student ID</div>
+                <div class="card-id-num">LM-88942-CS</div>
+              </div>
+              <div style="text-align: right;">
+                <div style="font-size: 0.65rem; text-transform: uppercase; opacity: 0.8;">Valid Thru</div>
+                <div style="font-size: 0.88rem; font-weight: 700;">DEC 2027</div>
+              </div>
+            </div>
+          </div>
+
+          <div style="margin-top: 1rem; display: flex; gap: 0.75rem;">
+            <button class="btn-secondary" style="flex: 1; justify-content: center; font-size: 0.85rem;" onclick="window.print()">
+              <i class="fa-solid fa-print"></i> Print Card
+            </button>
+            <button class="btn-primary" style="flex: 1; justify-content: center; font-size: 0.85rem;" onclick="showToast('Library Management pass QR scanned and synced!', 'success')">
+              <i class="fa-solid fa-qrcode"></i> Digital Pass
+            </button>
+          </div>
+        </div>
+
+        <!-- Right: Borrowed Books Management Table -->
+        <div class="dashboard-content-box">
+          <div class="dash-stats-row">
+            <div class="dash-stat-tile">
+              <h4 id="dash-borrowed-count">1</h4>
+              <p>Active Loan Volumes</p>
+            </div>
+            <div class="dash-stat-tile">
+              <h4 id="dash-quota-left">4</h4>
+              <p>Remaining Loan Quota</p>
+            </div>
+            <div class="dash-stat-tile">
+              <h4 id="dash-focus-hours">0.0 hrs</h4>
+              <p>Study Hours Tracked</p>
+            </div>
+          </div>
+
+          <div style="display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #f1f5f9; padding-bottom: 0.75rem;">
+            <h3 style="font-size: 1.2rem; color: #1e3a8a;">Currently Checked Out Volumes</h3>
+            <span style="font-size: 0.82rem; color: #64748b;">Automatic 7-day online renewals</span>
+          </div>
+
+          <div class="borrowed-list-wrapper" id="borrowed-books-list">
+            <!-- Dynamic table from js/app.js -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       DOWNLOADABLE STUDY GUIDES & E-RESOURCES
+       ========================================================================== -->
+  <section class="section" id="resources-section">
+    <div class="site-container">
+      <div class="section-header">
+        <span class="section-tag">Digital Repository</span>
+        <h2 class="section-title">Essential Study Packs & Cheat Sheets</h2>
+        <p class="section-subtitle">
+          Complimentary downloadable revision packs, formula sheets, and research paper templates formatted for high-scoring exams.
+        </p>
+      </div>
+
+      <div class="resources-grid" id="resources-grid">
+        <!-- Rendered by js/app.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       FAQ & POLICIES
+       ========================================================================== -->
+  <section class="section section-light-blue" id="faq-section">
+    <div class="site-container">
+      <div class="section-header">
+        <span class="section-tag">Library Management Guidelines</span>
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <p class="section-subtitle">
+          Everything you need to know about borrowing privileges, study reservations, and digital resource usage.
+        </p>
+      </div>
+
+      <div class="faq-accordion" id="faq-accordion">
+        <!-- Rendered by js/app.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       FOOTER
+       ========================================================================== -->
+  <footer class="site-footer">
+    <div class="site-container">
+      <div class="footer-grid">
+        <!-- Footer Brand -->
+        <div class="footer-brand">
+          <h3>
+            <i class="fa-solid fa-book-open" style="color: #3b82f6;"></i> Library Management
+          </h3>
+          <p>
+            The dedicated academic library management ecosystem empowering university students, scholars, and faculty with premier physical and digital knowledge resources.
+          </p>
+          <div style="display: flex; gap: 0.75rem; font-size: 1.1rem;">
+            <a href="#" style="color: #94a3b8; transition: color 0.2s;" onmouseover="this.style.color='#38bdf8'" onmouseout="this.style.color='#94a3b8'"><i class="fa-brands fa-github"></i></a>
+            <a href="#" style="color: #94a3b8; transition: color 0.2s;" onmouseover="this.style.color='#38bdf8'" onmouseout="this.style.color='#94a3b8'"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#" style="color: #94a3b8; transition: color 0.2s;" onmouseover="this.style.color='#38bdf8'" onmouseout="this.style.color='#94a3b8'"><i class="fa-brands fa-linkedin"></i></a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-col">
+          <h4>Academic Catalog</h4>
+          <ul class="footer-links">
+            <li><a href="#catalog-section" onclick="selectCategory('Computer Science & AI')">Computer Science & AI</a></li>
+            <li><a href="#catalog-section" onclick="selectCategory('Medical & Healthcare')">Medical & Healthcare</a></li>
+            <li><a href="#catalog-section" onclick="selectCategory('Engineering & Physics')">Engineering & Physics</a></li>
+            <li><a href="#catalog-section" onclick="selectCategory('Mathematics & Statistics')">Mathematics & Statistics</a></li>
+            <li><a href="#catalog-section" onclick="selectCategory('Literature & Humanities')">Literature & Humanities</a></li>
+          </ul>
+        </div>
+
+        <!-- Study Services -->
+        <div class="footer-col">
+          <h4>Study Services</h4>
+          <ul class="footer-links">
+            <li><a href="#study-space-section">Quiet Pod Reservation</a></li>
+            <li><a href="#study-space-section">Group Collaboration Rooms</a></li>
+            <li><a href="#focus-suite-section">Pomodoro Focus Timer</a></li>
+            <li><a href="#resources-section">Formula & Revision Guides</a></li>
+            <li><a href="#dashboard-section">Digital Pass Generator</a></li>
+          </ul>
+        </div>
+
+        <!-- Operating Hours -->
+        <div class="footer-col">
+          <h4>Library Hours</h4>
+          <ul class="footer-links" style="font-size: 0.88rem;">
+            <li style="color: #e2e8f0;"><strong>Monday - Friday:</strong><br>07:00 AM – 11:00 PM</li>
+            <li style="color: #e2e8f0; margin-top: 0.5rem;"><strong>Saturday - Sunday:</strong><br>08:00 AM – 10:00 PM</li>
+            <li style="color: #38bdf8; margin-top: 0.5rem;"><i class="fa-solid fa-circle-check"></i> Digital Portal: 24/7/365</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          © 2026 <strong>Library Management</strong>. All academic rights reserved.
+        </div>
+        <div style="display: flex; gap: 1.5rem;">
+          <a href="#faq-section" style="color: #94a3b8;">Academic Ethics</a>
+          <a href="#faq-section" style="color: #94a3b8;">Privacy Policy</a>
+          <a href="#faq-section" style="color: #94a3b8;">Terms of Access</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       MODALS
+       ========================================================================== -->
+
+  <!-- Add New Study Book Modal -->
+  <div class="modal-backdrop" id="add-book-modal">
+    <div class="modal-container">
+      <div class="modal-header">
+        <h3 class="modal-title"><i class="fa-solid fa-plus-circle" style="color: #2563eb;"></i> Add Study Volume</h3>
+        <button class="modal-close-btn" id="btn-close-add-modal"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <form id="add-book-form">
+        <div class="modal-body">
+          <div class="form-group">
+            <label class="form-label" for="book-title-in">Book / Resource Title *</label>
+            <input type="text" class="form-control" name="title" id="book-title-in" placeholder="e.g. Operating System Concepts" required>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+            <div class="form-group">
+              <label class="form-label" for="book-author-in">Author(s) *</label>
+              <input type="text" class="form-control" name="author" id="book-author-in" placeholder="e.g. Silberschatz & Galvin" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="book-category-in">Category *</label>
+              <select class="form-control" name="category" id="book-category-in" required>
+                <option value="Computer Science & AI">Computer Science & AI</option>
+                <option value="Medical & Healthcare">Medical & Healthcare</option>
+                <option value="Engineering & Physics">Engineering & Physics</option>
+                <option value="Business & Economics">Business & Economics</option>
+                <option value="Mathematics & Statistics">Mathematics & Statistics</option>
+                <option value="Literature & Humanities">Literature & Humanities</option>
+              </select>
+            </div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem;">
+            <div class="form-group">
+              <label class="form-label" for="book-copies-in">Copies Available</label>
+              <input type="number" class="form-control" name="copies" id="book-copies-in" value="5" min="1" max="50">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="book-pages-in">Pages</label>
+              <input type="number" class="form-control" name="pages" id="book-pages-in" value="640">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="book-isbn-in">ISBN</label>
+              <input type="text" class="form-control" name="isbn" id="book-isbn-in" placeholder="978-013...">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="book-shelf-in">Shelf / Stacks Location</label>
+            <input type="text" class="form-control" name="shelf" id="book-shelf-in" placeholder="e.g. Building B • Floor 2 • Shelf CS-10">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="book-cover-in">Cover Image URL (Optional)</label>
+            <input type="url" class="form-control" name="coverUrl" id="book-cover-in" placeholder="https://images.unsplash.com/...">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="book-summary-in">Academic Abstract / Summary</label>
+            <textarea class="form-control" name="summary" id="book-summary-in" rows="3" placeholder="Brief outline of syllabus topics, concepts, and target audience..."></textarea>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn-secondary" id="btn-cancel-add-modal">Cancel</button>
+          <button type="submit" class="btn-primary"><i class="fa-solid fa-check"></i> Save to Catalog</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Book Preview / Reader Modal -->
+  <div class="modal-backdrop" id="book-preview-modal">
+    <div class="modal-container" style="max-width: 720px;">
+      <div class="modal-header">
+        <h3 class="modal-title"><i class="fa-solid fa-book-open-reader" style="color: #2563eb;"></i> Academic Excerpt Reader</h3>
+        <button class="modal-close-btn" id="btn-close-preview-modal"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body" id="book-preview-content">
+        <!-- Rendered dynamically -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Reservation Ticket Modal -->
+  <div class="modal-backdrop" id="ticket-modal">
+    <div class="modal-container" style="max-width: 500px;">
+      <div class="modal-header">
+        <h3 class="modal-title"><i class="fa-solid fa-ticket" style="color: #10b981;"></i> Study Pass Ticket</h3>
+        <button class="modal-close-btn" id="btn-close-ticket-modal"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body" id="ticket-modal-body">
+        <!-- Dynamic Ticket Details -->
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn-secondary" onclick="window.print()"><i class="fa-solid fa-print"></i> Print Ticket</button>
+        <button type="button" class="btn-primary" onclick="document.getElementById('ticket-modal').classList.remove('show')">Done</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Virtual Library Card Modal -->
+  <div class="modal-backdrop" id="virtual-card-modal">
+    <div class="modal-container" style="max-width: 480px;">
+      <div class="modal-header">
+        <h3 class="modal-title"><i class="fa-solid fa-id-card" style="color: #2563eb;"></i> Digital Student Pass</h3>
+        <button class="modal-close-btn" id="btn-close-card-modal"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="virtual-card-container">
+          <div class="virtual-card-pattern"></div>
+          <div class="card-top">
+            <span class="card-institute">Library Management • Official Pass</span>
+            <div class="card-chip"></div>
+          </div>
+
+          <div class="card-user-info">
+            <div class="card-user-name">Alex Sterling</div>
+            <div class="card-user-role">B.S. Computer Science & AI</div>
+          </div>
+
+          <div class="card-bottom">
+            <div>
+              <div style="font-size: 0.65rem; text-transform: uppercase; opacity: 0.8;">Student ID</div>
+              <div class="card-id-num">LM-88942-CS</div>
+            </div>
+            <div style="text-align: right;">
+              <div style="font-size: 0.65rem; text-transform: uppercase; opacity: 0.8;">Valid Thru</div>
+              <div style="font-size: 0.88rem; font-weight: 700;">DEC 2027</div>
+            </div>
+          </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 1.5rem; padding: 1rem; background: #f8fafc; border-radius: 12px; border: 1px dashed #cbd5e1;">
+          <div style="font-size: 1.1rem; letter-spacing: 0.3em; font-family: monospace; font-weight: 800; color: #1e3a8a; margin-bottom: 0.25rem;">
+            ||| | |||| || ||||| ||| |||| |
+          </div>
+          <div style="font-size: 0.75rem; color: #64748b;">Barcode readable at Library Management Check-in Terminals</div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn-secondary" onclick="window.print()"><i class="fa-solid fa-print"></i> Print Physical Pass</button>
+        <button type="button" class="btn-primary" onclick="document.getElementById('virtual-card-modal').classList.remove('show')">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div id="toast-container"></div>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
